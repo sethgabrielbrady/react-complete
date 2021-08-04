@@ -1,13 +1,17 @@
+import React, {useState} from 'react';
 import  ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css"
 import Card from "../UI/Card"
 
-
 const ExpenseItem = (props) => {
+ const [title, setTitle] = useState(props.title);
+  //the first element ("title") points to the value in props.title
+  //setTitle points to a function that will set the value of title (hence "setTitle")
+  // this is the convention
+  //both names are up to the user
 
-  let title = props.title;
   const clickHandler = () => {
-    title = "Updated";
+    setTitle("Updated");
   }
   return (
     <Card className="expense-item">
